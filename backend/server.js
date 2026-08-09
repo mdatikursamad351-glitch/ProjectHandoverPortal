@@ -165,7 +165,8 @@ app.post("/hello", (req, res) => {
 });
 console.log("GET TAKEOVER ROUTE IS IN THIS FILE");
 
-app.listen(5000, () => {
-  console.log("TAKEOVER ROUTE LOADED");
-  console.log("Server is running on http://localhost:5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
