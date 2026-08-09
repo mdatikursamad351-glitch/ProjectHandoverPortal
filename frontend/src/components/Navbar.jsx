@@ -18,6 +18,10 @@ function Navbar() {
         <Link to="/projects">
           <button>View Projects</button>
         </Link>
+
+        <Link to="/takeover-requests">
+          <button>Takeover Requests</button>
+        </Link>
       </div>
     </nav>
   );
