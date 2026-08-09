@@ -8,7 +8,10 @@ const TakeoverRequest = require("./models/TakeoverRequest");
 const app = express();
 console.log("🚀 SERVER UPDATED - 20:30 TEST");
 app.use(cors({
-  origin: "http://localhost:5173"
+  origin: [
+    "http://localhost:5173",
+    "https://projecthandoverportal-production-40bb.up.railway.app"
+  ]
 }));
 
 app.use(express.json());
