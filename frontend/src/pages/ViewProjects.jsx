@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function ViewProjects() {
+function ViewProjects({ darkMode }) {
   const [search, setSearch] = useState("");
   const [projects, setProjects] = useState([]);
 const [editingProject, setEditingProject] = useState(null);
@@ -31,7 +31,12 @@ setEditingProject(null);
 };
 
   return (
-    <div className="container">
+    <div
+  className="container"
+  style={{
+    color: darkMode ? "white" : "black",
+  }}
+>
       <h1>All Projects</h1>
 
       <div
@@ -46,7 +51,8 @@ setEditingProject(null);
   <div
     style={{
       padding: "18px 25px",
-      background: "white",
+      background: darkMode ? "#2a2a2a" : "white",
+color: darkMode ? "white" : "black",
       borderRadius: "10px",
       boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
       minWidth: "130px",
@@ -62,7 +68,8 @@ setEditingProject(null);
   <div
     style={{
       padding: "18px 25px",
-      background: "white",
+      background: darkMode ? "#2a2a2a" : "white",
+color: darkMode ? "white" : "black",
       borderRadius: "10px",
       boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
       minWidth: "130px",
@@ -78,7 +85,8 @@ setEditingProject(null);
   <div
     style={{
       padding: "18px 25px",
-      background: "white",
+      background: darkMode ? "#2a2a2a" : "white",
+color: darkMode ? "white" : "black",
       borderRadius: "10px",
       boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
       minWidth: "130px",
@@ -94,7 +102,8 @@ setEditingProject(null);
   <div
     style={{
       padding: "18px 25px",
-      background: "white",
+      background: darkMode ? "#2a2a2a" : "white",
+color: darkMode ? "white" : "black",
       borderRadius: "10px",
       boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
       minWidth: "130px",
@@ -110,7 +119,8 @@ setEditingProject(null);
   <div
     style={{
       padding: "18px 25px",
-      background: "white",
+      background: darkMode ? "#2a2a2a" : "white",
+color: darkMode ? "white" : "black",
       borderRadius: "10px",
       boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
       minWidth: "160px",
@@ -134,11 +144,14 @@ setEditingProject(null);
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         style={{
-          padding: "10px",
-          width: "300px",
-          marginBottom: "20px",
-          borderRadius: "5px",
-        }}
+  padding: "10px",
+  width: "300px",
+  marginBottom: "20px",
+  borderRadius: "5px",
+  backgroundColor: darkMode ? "#333" : "white",
+  color: darkMode ? "white" : "black",
+  border: darkMode ? "1px solid #555" : "1px solid #ccc",
+}}
       />
 
       {projects.length === 0 ? (
@@ -154,12 +167,13 @@ setEditingProject(null);
             <div
               key={project._id}
               style={{
-              background: "white",
-              padding: "24px",
-              margin: "20px 0",
-              borderRadius: "12px",
-              boxShadow: "0 3px 12px rgba(0,0,0,0.08)",
-              border: "1px solid #e5e7eb",
+              background: darkMode ? "#2a2a2a" : "white",
+color: darkMode ? "white" : "black",
+padding: "24px",
+margin: "20px 0",
+borderRadius: "12px",
+boxShadow: "0 3px 12px rgba(0,0,0,0.08)",
+border: darkMode ? "1px solid #444" : "1px solid #e5e7eb",
             }}
             >
               <h2>{project.projectName || "Unnamed Project"}</h2>
@@ -261,13 +275,15 @@ setEditingProject(null);
 {project.meetingLogs?.length > 0 ? (
   project.meetingLogs.map((log, index) => (
     <div
-      key={index}
-      style={{
-        border: "1px solid #ccc",
-        padding: "10px",
-        marginTop: "10px",
-      }}
-    >
+  key={index}
+  style={{
+    border: darkMode ? "1px solid #555" : "1px solid #ccc",
+    backgroundColor: darkMode ? "#333" : "white",
+    color: darkMode ? "white" : "black",
+    padding: "10px",
+    marginTop: "10px",
+  }}
+>
       <p><strong>Date:</strong> {log.date}</p>
       <p><strong>Attendees:</strong> {log.attendees}</p>
       <p><strong>Summary:</strong> {log.summary}</p>
@@ -360,12 +376,14 @@ style={{
 </button>
 {editingProject?._id === project._id && (
   <div
-    style={{
-      marginTop: "20px",
-      padding: "15px",
-      border: "1px solid black",
-    }}
-  >
+  style={{
+    marginTop: "20px",
+    padding: "15px",
+    border: darkMode ? "1px solid #555" : "1px solid black",
+    backgroundColor: darkMode ? "#333" : "white",
+    color: darkMode ? "white" : "black",
+  }}
+>
     <h3>Edit Project</h3>
 
     <input

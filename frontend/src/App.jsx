@@ -39,7 +39,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/create" element={<CreateProject />} />
-      <Route path="/projects" element={<ViewProjects />} />
+      <Route path="/projects" element={<ViewProjects darkMode={darkMode} />} />
       <Route path="/takeover-requests" element={<TakeoverRequests />} />
     </Routes>
   </div>
