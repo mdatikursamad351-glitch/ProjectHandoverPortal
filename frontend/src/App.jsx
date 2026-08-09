@@ -11,7 +11,7 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   useEffect(() => {
   axios
-    .get("http://localhost:5000/")
+    .get("https://projecthandoverportal-production.up.railway.app/")
     .then((res) => {
       console.log(res.data);
     })

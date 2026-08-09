@@ -6,14 +6,14 @@ function ViewProjects() {
 const [editingProject, setEditingProject] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/projects")
+    fetch("https://projecthandoverportal-production.up.railway.app/projects")
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) => console.log(err));
   }, []);
   const updateProject = async () => {
   await fetch(
-    `http://localhost:5000/projects/${editingProject._id}`,
+    `https://projecthandoverportal-production.up.railway.app/projects/${editingProject._id}`,
     {
       method: "PUT",
       headers: {
@@ -23,7 +23,7 @@ const [editingProject, setEditingProject] = useState(null);
     }
   );
 
-  const response = await fetch("http://localhost:5000/projects");
+  const response = await fetch("https://projecthandoverportal-production.up.railway.app/projects");
 const data = await response.json();
 
 setProjects(data);
@@ -288,7 +288,7 @@ setEditingProject(null);
     color: "white",
   }}
   onClick={async () => {
-    await fetch(`http://localhost:5000/projects/${project._id}`, {
+    await fetch(`https://projecthandoverportal-production.up.railway.app/projects/${project._id}`, {
       method: "DELETE",
     });
 
@@ -336,7 +336,7 @@ style={{
     if (!requesterName || !message) return;
 
     const response = await fetch(
-      "http://localhost:5000/takeover-requests",
+      "https://projecthandoverportal-production.up.railway.app/takeover-requests",
       {
         method: "POST",
         headers: {
@@ -492,7 +492,7 @@ style={{
 
     if (!date || !attendees || !summary) return;
 
-    fetch(`http://localhost:5000/projects/${project._id}/meeting`, {
+    fetch(`https://projecthandoverportal-production.up.railway.app/projects/${project._id}/meeting`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

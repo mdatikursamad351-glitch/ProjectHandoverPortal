@@ -8,7 +8,7 @@ function TakeoverRequests() {
 
   useEffect(() => {
   const fetchRequests = () => {
-    fetch("http://localhost:5000/takeover-requests")
+    fetch("https://projecthandoverportal-production.up.railway.app/takeover-requests")
       .then((res) => res.json())
       .then((data) => setRequests(data))
       .catch((err) => console.log(err));
@@ -74,7 +74,7 @@ function TakeoverRequests() {
   <button
     onClick={async () => {
       const response = await fetch(
-        `http://localhost:5000/takeover-requests/${request._id}`,
+        `https://projecthandoverportal-production.up.railway.app/takeover-requests/${request._id}`,
         {
           method: "PUT",
           headers: {
@@ -102,7 +102,7 @@ function TakeoverRequests() {
   <button
     onClick={async () => {
       const response = await fetch(
-        `http://localhost:5000/takeover-requests/${request._id}`,
+        `https://projecthandoverportal-production.up.railway.app/takeover-requests/${request._id}`,
         {
           method: "PUT",
           headers: {
